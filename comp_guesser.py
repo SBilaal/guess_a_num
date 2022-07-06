@@ -8,6 +8,7 @@ def comp_guesser(x):
 
     while guessed_number != gen_number:
         guessed_number = random.randint(lower,higher)
+        print(f"Max: {higher} Min: {lower} Guessed {guessed_number}")
         if guessed_number == gen_number:
             print("You got it right!")
         if guessed_number > gen_number:
