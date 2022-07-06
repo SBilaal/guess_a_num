@@ -1,21 +1,17 @@
 import random
 
-def guess(x, guessed_number):
-    if x == guessed_number:
-        print("You got it right!")
-        return True
-    if x > guessed_number:
-        print("You guessed higher")
-        return False
-    if x < guessed_number:
-        print("You guessed lower")
-        return False
+def guess(x):
+    gen_number = random.randint(0,x)
+    guessed_number = int(input("Guess the number chosen: "))
+    while guessed_number != gen_number:
+        if guessed_number == gen_number:
+            print("You got it right!")
+        if guessed_number > gen_number:
+            print("You guessed higher")
+        if guessed_number < gen_number:
+            print("You guessed lower")
 
 def main():
-    is_correct = False
-    guessed_number = random.randint(0,10)
-    while not is_correct:
-        is_correct = guess(int(input("Guess the number chosen: ")), guessed_number)
-
+    guess(20)
 if __name__ == '__main__':
     main()
