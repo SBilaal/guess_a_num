@@ -25,7 +25,10 @@ def comp_guesser_v2(x):
     # guess = 0
     feedback = ''
     while feedback != 'c':
-        guess = random.randint(low, high)
+        if low == high:
+            guess = low
+        else:
+            guess = random.randint(low, high)
         print(f"Max: {high} Min: {low} Guessed {guess}")
         print(f'I guessed: {guess}')
         feedback = input('Is my number too high(h), too low(l), or correct(c)').lower()
