@@ -17,3 +17,22 @@ def comp_guesser(x):
         if guessed_number < gen_number:
             lower = guessed_number
             print("You guessed lower")
+
+def comp_guesser_v2(x):
+    low = 1
+    high = x
+
+    # guess = 0
+    feedback = ''
+    while feedback != 'c':
+        guess = random.randint(low, high)
+        print(f"Max: {high} Min: {low} Guessed {guess}")
+        print(f'I guessed: {guess}')
+        feedback = input('Is my number too high(h), too low(l), or correct(c)').lower()
+        if feedback == 'h':
+            high = guess - 1
+        elif feedback == 'l':
+            low = guess + 1
+    print(feedback)
+    print('You\'re correct!')
+    
